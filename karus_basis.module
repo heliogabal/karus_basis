@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Karus Basis feature.
+ */
+
+include_once 'karus_basis.features.inc';
