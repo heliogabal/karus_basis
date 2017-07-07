@@ -41,6 +41,12 @@ function karus_basis_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_file_image_alt_text',
@@ -87,6 +93,12 @@ function karus_basis_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -149,6 +161,12 @@ function karus_basis_field_default_field_instances() {
       'file_directory' => 'field/image',
       'file_extensions' => 'png gif jpg jpeg',
       'image_field_caption' => 0,
+      'image_field_caption_wrapper' => array(
+        'image_field_caption_default' => array(
+          'format' => 'html',
+          'value' => '',
+        ),
+      ),
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',

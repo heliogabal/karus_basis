@@ -9,6 +9,7 @@ dependencies[] = admin_menu
 dependencies[] = contextual
 dependencies[] = draggableviews
 dependencies[] = features
+dependencies[] = file_entity
 dependencies[] = filter
 dependencies[] = float_filter
 dependencies[] = geofield

@@ -10,15 +10,11 @@
 function karus_basis_wysiwyg_default_profiles() {
   $profiles = array();
 
-  // Exported profile: html
+  // Exported profile: html.
   $profiles['html'] = array(
     'format' => 'html',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 0,
-      'add_to_summaries' => 1,
       'theme' => '',
       'language' => 'de',
       'buttons' => array(
@@ -70,6 +66,14 @@ function karus_basis_wysiwyg_default_profiles() {
       'advanced__active_tab' => 'edit-paste',
       'forcePasteAsPlainText' => 1,
     ),
+    'preferences' => array(
+      'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 0,
+      'user_choose' => 0,
+      'version' => '4.6.2.20af917',
+    ),
+    'name' => 'formathtml',
     'rdf_mapping' => array(),
   );
 

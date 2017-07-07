@@ -29,6 +29,11 @@ function karus_basis_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'links' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
   );
   $export['node|blogpost|default'] = $ds_fieldsetting;
 
@@ -43,6 +48,12 @@ function karus_basis_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+      ),
     ),
     'links' => array(
       'weight' => '3',
@@ -110,14 +121,14 @@ function karus_basis_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_image',
+        0 => 'links',
         1 => 'insonews_teaser',
         2 => 'body',
         3 => 'field_tags',
       ),
     ),
     'fields' => array(
-      'field_image' => 'ds_content',
+      'links' => 'ds_content',
       'insonews_teaser' => 'ds_content',
       'body' => 'ds_content',
       'field_tags' => 'ds_content',
@@ -131,6 +142,7 @@ function karus_basis_ds_layout_settings_info() {
     'layout_attributes_merge' => TRUE,
     'layout_link_attribute' => FALSE,
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|blogpost|default'] = $ds_layout;
 
@@ -148,11 +160,11 @@ function karus_basis_ds_layout_settings_info() {
         1 => 'path',
         2 => 'redirect',
         3 => 'body',
-        4 => 'metatags',
-        5 => 'field_image',
-        6 => 'field_tags',
+        4 => 'field_tags',
+        5 => 'metatags',
       ),
       'hidden' => array(
+        6 => 'field_image',
         7 => 'field_bannerimage',
         8 => '_add_existing_field',
       ),
@@ -162,9 +174,9 @@ function karus_basis_ds_layout_settings_info() {
       'path' => 'ds_content',
       'redirect' => 'ds_content',
       'body' => 'ds_content',
-      'metatags' => 'ds_content',
-      'field_image' => 'ds_content',
       'field_tags' => 'ds_content',
+      'metatags' => 'ds_content',
+      'field_image' => 'hidden',
       'field_bannerimage' => 'hidden',
       '_add_existing_field' => 'hidden',
     ),
@@ -177,6 +189,7 @@ function karus_basis_ds_layout_settings_info() {
     'layout_attributes_merge' => TRUE,
     'layout_link_attribute' => FALSE,
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|blogpost|form'] = $ds_layout;
 
@@ -213,6 +226,7 @@ function karus_basis_ds_layout_settings_info() {
     'layout_attributes_merge' => TRUE,
     'layout_link_attribute' => FALSE,
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|blogpost|teaser'] = $ds_layout;
 
@@ -285,25 +299,27 @@ function karus_basis_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_bannerimage',
         2 => 'body',
         3 => 'path',
         4 => 'redirect',
         5 => 'metatags',
       ),
       'hidden' => array(
+        1 => 'field_bannerimage',
         6 => 'field_view',
-        7 => '_add_existing_field',
+        7 => 'xmlsitemap',
+        8 => '_add_existing_field',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_bannerimage' => 'ds_content',
+      'field_bannerimage' => 'hidden',
       'body' => 'ds_content',
       'path' => 'ds_content',
       'redirect' => 'ds_content',
       'metatags' => 'ds_content',
       'field_view' => 'hidden',
+      'xmlsitemap' => 'hidden',
       '_add_existing_field' => 'hidden',
     ),
     'classes' => array(),
@@ -315,6 +331,7 @@ function karus_basis_ds_layout_settings_info() {
     'layout_attributes_merge' => TRUE,
     'layout_link_attribute' => FALSE,
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|page|form'] = $ds_layout;
 

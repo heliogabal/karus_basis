@@ -90,21 +90,22 @@ function karus_basis_default_search_api_index() {
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "1", "bundles" : [] }
+          "settings" : { "default" : "0", "bundles" : { "blogpost" : "blogpost" } }
         },
-        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_language_control" : {
           "status" : 0,
           "weight" : "0",
           "settings" : { "lang_field" : "", "languages" : [] }
         },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
+        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] }
       },
       "processors" : {
         "search_api_case_ignore" : {
@@ -115,8 +116,7 @@ function karus_basis_default_search_api_index() {
               "body:value" : true,
               "body:summary" : true,
               "field_tags:name" : true,
-              "field_tags:description" : true,
-              "field_link:title" : true
+              "field_tags:description" : true
             }
           }
         },
@@ -129,8 +129,7 @@ function karus_basis_default_search_api_index() {
               "body:value" : true,
               "body:summary" : true,
               "field_tags:name" : true,
-              "field_tags:description" : true,
-              "field_link:title" : true
+              "field_tags:description" : true
             },
             "title" : 1,
             "alt" : 1,
@@ -145,8 +144,7 @@ function karus_basis_default_search_api_index() {
               "body:value" : true,
               "body:summary" : true,
               "field_tags:name" : true,
-              "field_tags:description" : true,
-              "field_link:title" : true
+              "field_tags:description" : true
             }
           }
         },
@@ -159,8 +157,7 @@ function karus_basis_default_search_api_index() {
               "body:value" : true,
               "body:summary" : true,
               "field_tags:name" : true,
-              "field_tags:description" : true,
-              "field_link:title" : true
+              "field_tags:description" : true
             },
             "spaces" : "[^[:alnum:]]",
             "ignorable" : "[\\u0027]"
@@ -175,8 +172,7 @@ function karus_basis_default_search_api_index() {
               "body:value" : true,
               "body:summary" : true,
               "field_tags:name" : true,
-              "field_tags:description" : true,
-              "field_link:title" : true
+              "field_tags:description" : true
             },
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
@@ -191,7 +187,22 @@ function karus_basis_default_search_api_index() {
             "excerpt" : 1,
             "excerpt_length" : "256",
             "exclude_fields" : [],
-            "highlight" : "always"
+            "highlight" : "always",
+            "highlight_partial" : 1
+          }
+        },
+        "search_api_porter_stemmer" : {
+          "status" : 1,
+          "weight" : "35",
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "body:value" : true,
+              "body:summary" : true,
+              "field_tags:name" : true,
+              "field_tags:description" : true
+            },
+            "exceptions" : "texan=texa"
           }
         }
       }
